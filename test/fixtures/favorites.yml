@@ -4,8 +4,10 @@ one:
   user_id: 1
   favorited_item: MyString
   quantity: 1
+  user: one
 
 two:
   user_id: 1
   favorited_item: MyString
   quantity: 1
+  user: one

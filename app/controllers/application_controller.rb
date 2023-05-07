@@ -22,4 +22,6 @@ class ApplicationController < ActionController::Base
       render json: {}, status: :unauthorized
     end
   end
+
+  protect_from_forgery with: :exception, unless: -> { request.format.json? }
 end
