@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   # Lookup
 
   # Favorites
-
+  get "/favorites" => "favorites#index"
 end
