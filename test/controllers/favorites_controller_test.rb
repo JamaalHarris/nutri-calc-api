@@ -15,4 +15,12 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
       assert_response 200
     end
   end
+
+  test "show" do
+    get "/favorites/#{Favorite.first.id}.json"
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal ["user_id", "quantity", "favorited_item"], data.keys
+  end
 end

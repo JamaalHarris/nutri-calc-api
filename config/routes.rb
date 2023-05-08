@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   # Favorites
   get "/favorites" => "favorites#index"
   post "/favorites" => "favorites#create"
+  get "/favorites/:id" => "favorites#show"
 end
