@@ -32,4 +32,11 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
     data = JSON.parse(response.body)
     assert_equal 6, data["quantity"]
   end
+
+  test "destroy" do
+    assert_difference "Favorite.count", -1 do
+      delete "/favorites/#{Favorite.first.id}.json"
+      assert_response 200
+    end
+  end
 end
