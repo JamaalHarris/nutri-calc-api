@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get "/favorites" => "favorites#index"
   post "/favorites" => "favorites#create"
   get "/favorites/:id" => "favorites#show"
+  patch "/favorites/:id" => "favorites#update"
 end

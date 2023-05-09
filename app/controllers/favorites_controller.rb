@@ -17,4 +17,14 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find_by(id: params[:id])
     render :show
   end
+
+  def update
+    @favorite = Favorite.find_by(id: params[:id])
+    @favorite.update(
+      user_id: params[:user_id] || @favorite.user_id,
+      quantity: params[:quantity] || @favorite.quantity,
+      favorited_item: params[:favorited_item] || @favorite.favorited_item,
+    )
+    render :show
+  end
 end

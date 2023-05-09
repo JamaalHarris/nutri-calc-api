@@ -1,5 +1,13 @@
-### Favorites
+### Favorites Create
 POST http://localhost:3000/favorites.json
 Content-Type: application/json
 
 {"user_id": 1, "quantity": 2, "favorited_item": "Big Mac"}
+
+### Favorites Update
+PATCH http://localhost:3000/favorites/1.json
+Content-Type: application/json
+
+{
+  "quantity": 2
+}
