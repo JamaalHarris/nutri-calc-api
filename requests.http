@@ -1,8 +1,39 @@
+### User Create (aka Signup)
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "name": "Iris",
+  "email": "Iris@test.com",
+  "password_digest": "password",
+}
+
+### User index
+GET http://localhost:3000/users
+
+### User Show
+GET http://localhost:3000/users/1.json
+
+### Session Create (aka Login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "jamaal@test.com",
+  "password": "password"
+}
+
+### Favorites Index
+GET http://localhost:3000/favorites.json
+
+### Favorites Show
+GET http://localhost:3000/favorites/1.json 
+
 ### Favorites Create
 POST http://localhost:3000/favorites.json
 Content-Type: application/json
 
-{"user_id": 1, "quantity": 2, "favorited_item": "Big Mac"}
+{"user_id": 3, "quantity": 1, "favorited_item": "Happy Meal"}
 
 ### Favorites Update
 PATCH http://localhost:3000/favorites/1.json
@@ -11,3 +42,9 @@ Content-Type: application/json
 {
   "quantity": 2
 }
+
+### Favorites Destroy
+DELETE http://localhost:3000/favorites/4.json
+
+### API Index
+GET http://localhost:3000/api.json?quantity=2&item=apple
