@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   delete "/favorites/:id" => "favorites#destroy"
 
   # API
-  get "/api" => "api#index"
+  post "/api" => "api#index"
 end

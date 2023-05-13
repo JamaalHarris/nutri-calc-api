@@ -1,7 +1,8 @@
 class ApiController < ApplicationController
   def index
     quantity = params[:quantity]
-    item = params[:item]
+    # takes in user input of item and using the globalsubstitute method replaces all of the spaces with  %20
+    item = params[:item].gsub! " ", "%20"
     food_info = "#{quantity}%20#{item}"
 
     if params[:measurement]

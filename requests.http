@@ -33,7 +33,7 @@ GET http://localhost:3000/favorites/1.json
 POST http://localhost:3000/favorites.json
 Content-Type: application/json
 
-{"user_id": 3, "quantity": 1, "favorited_item": "Happy Meal"}
+{"quantity": 2, "favorited_item": "cat"}
 
 ### Favorites Update
 PATCH http://localhost:3000/favorites/1.json
@@ -47,4 +47,4 @@ Content-Type: application/json
 DELETE http://localhost:3000/favorites/4.json
 
 ### API Index
-GET http://localhost:3000/api.json?quantity=2&item=apple
+POST http://localhost:3000/api.json?quantity=2&item=apple
