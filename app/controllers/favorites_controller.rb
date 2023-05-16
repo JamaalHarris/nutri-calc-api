@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites = Favorite.all
+    @favorites = current_user.favorites
     render :index
   end
 
@@ -8,6 +8,7 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.create(
       user_id: current_user.id,
       quantity: params[:quantity],
+      measurement: params[:measurement],
       favorited_item: params[:favorited_item],
     )
     render :show
@@ -23,6 +24,7 @@ class FavoritesController < ApplicationController
     @favorite.update(
       user_id: params[:user_id] || @favorite.user_id,
       quantity: params[:quantity] || @favorite.quantity,
+      measurement: params[:measurement] || @favorite.measurement,
       favorited_item: params[:favorited_item] || @favorite.favorited_item,
     )
     render :show
